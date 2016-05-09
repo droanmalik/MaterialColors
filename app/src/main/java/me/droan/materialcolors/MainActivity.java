@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent2);
         break;
       case R.id.settings:
+        Toast.makeText(MainActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
         break;
     }
   }

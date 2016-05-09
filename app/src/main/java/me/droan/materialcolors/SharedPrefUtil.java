@@ -11,7 +11,7 @@ public class SharedPrefUtil {
   public static final String KEY_PRIMARY = "primary";
   public static final String KEY_ACCENT = "accent";
   public static final String KEY_STATUS = "status";
-  public static final String KEY_BACKGROUND = "primary";
+  public static final String KEY_BACKGROUND = "background";
   private static final String MY_PREF = "me.droan.materialColors.sharedpref";
 
   public static void write(Context context, String key, String hexCode) {

@@ -13,7 +13,7 @@ android {
 
   defaultConfig {
     applicationId "me.droan.materialcolors"
-    minSdkVersion 17
+    minSdkVersion 21
     targetSdkVersion 23
     versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
     versionName "${versionMajor}.${versionMinor}.${versionPatch}"

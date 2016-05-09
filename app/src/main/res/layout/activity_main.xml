@@ -13,7 +13,6 @@
       android:id="@+id/appBar"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      tools:background="#f00"
       >
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -27,7 +26,7 @@
       android:id="@+id/gridLayout"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_marginTop="@dimen/action_bar_size_x2"
+      android:paddingTop="@dimen/action_bar_size_x2"
       app:columnCount="2"
       app:layout_behavior="@string/appbar_scrolling_view_behavior"
       >
@@ -57,6 +56,7 @@
         android:layout_height="wrap_content"
         android:gravity="end"
         android:text="Status Bar Color"
+        android:visibility="gone"
         app:layout_columnWeight="1"
         app:layout_gravity="fill_horizontal"
         style="@style/Base.Widget.AppCompat.Button.Borderless"
@@ -67,6 +67,7 @@
         android:layout_height="wrap_content"
         android:gravity="start"
         android:text="# Color"
+        android:visibility="gone"
         app:layout_columnWeight="1"
         app:layout_gravity="fill_horizontal"
         style="@style/Base.Widget.AppCompat.Button.Borderless"

@@ -14,7 +14,9 @@
     <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
   </style>
 
-  <style name="AppTheme.MainTheme" parent="AppTheme"/>
+  <style name="AppTheme.MainTheme" parent="AppTheme">
+    <item name="android:windowTranslucentStatus">true</item>
+  </style>
 
   <style name="AppTheme.colorTheme" parent="AppTheme">
 
