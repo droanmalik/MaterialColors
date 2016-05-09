@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.bluelinelabs.logansquare.LoganSquare;
@@ -22,6 +23,8 @@ public class ColorsActivity extends AppCompatActivity {
   @Bind(R.id.colorMainList) RecyclerView colorMainList;
   @Bind(R.id.toolbar) TextView toolbar;
   @Bind(R.id.colorDetailList) RecyclerView colorDetailList;
+  private ColorDetailAdapter detailAdapter;
+  private MaterialColorModel model;
 
   public static Intent putIntent(Context context, int color) {
     Intent intent = new Intent(context, ColorsActivity.class);
@@ -41,14 +44,31 @@ public class ColorsActivity extends AppCompatActivity {
     super.onResume();
     try {
       InputStream is = getAssets().open("material_colors.json");
-      MaterialColorModel model = LoganSquare.parse(is, MaterialColorModel.class);
-      ColorMainAdapter mainAdapter = new ColorMainAdapter(this, model.data);
-      ColorDetailAdapter detailAdapter = new ColorDetailAdapter(this, model.data.get(0).colors);
+      model = LoganSquare.parse(is, MaterialColorModel.class);
+      ColorMainAdapter mainAdapter =
+          new ColorMainAdapter(this, model.data, new ColorMainAdapter.ItemClickListener() {
+            @Override public void onItemClick(int position) {
+              refreshDetailAdapter(position);
+            }
+          });
+
+      detailAdapter = new ColorDetailAdapter(this, model.data.get(0).colors,
+          new ColorDetailAdapter.ItemClickListener() {
+
+            @Override public void onItemClick(String code) {
+              Toast.makeText(ColorsActivity.this, "" + code, Toast.LENGTH_SHORT).show();
+            }
+          });
+
       colorMainList.setAdapter(mainAdapter);
       colorDetailList.setAdapter(detailAdapter);
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  private void refreshDetailAdapter(int position) {
+    detailAdapter.refresh(model.data.get(position).colors);
   }
 
   private void initRecyclerView() {

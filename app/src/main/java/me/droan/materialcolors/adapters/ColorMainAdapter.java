@@ -19,10 +19,12 @@ import me.droan.materialcolors.model.Data;
 public class ColorMainAdapter extends RecyclerView.Adapter<ColorMainAdapter.Holder> {
   private Context context;
   private List<Data> list;
+  private ItemClickListener listener;
 
-  public ColorMainAdapter(Context context, List<Data> list) {
+  public ColorMainAdapter(Context context, List<Data> list, ItemClickListener listener) {
     this.context = context;
     this.list = list;
+    this.listener = listener;
   }
 
   @Override public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -32,11 +34,15 @@ public class ColorMainAdapter extends RecyclerView.Adapter<ColorMainAdapter.Hold
   }
 
   @Override public void onBindViewHolder(Holder holder, int position) {
-    holder.bindTo(list.get(position).code);
+    holder.bindTo(list.get(position).code, listener);
   }
 
   @Override public int getItemCount() {
     return list.size();
+  }
+
+  public interface ItemClickListener {
+    void onItemClick(int position);
   }
 
   class Holder extends RecyclerView.ViewHolder {
@@ -47,9 +53,14 @@ public class ColorMainAdapter extends RecyclerView.Adapter<ColorMainAdapter.Hold
       ButterKnife.bind(this, itemView);
     }
 
-    public void bindTo(String code) {
+    public void bindTo(String code, final ItemClickListener listener) {
 
       color.setCardBackgroundColor(Utility.getColor(code));
+      color.setOnClickListener(new View.OnClickListener() {
+        @Override public void onClick(View v) {
+          listener.onItemClick(getAdapterPosition());
+        }
+      });
     }
   }
 }
