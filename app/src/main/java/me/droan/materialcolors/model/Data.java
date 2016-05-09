@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @JsonObject public class Data {
-  @JsonField public List<Red> red = new ArrayList<>();
-  @JsonField public List<Pink> pink = new ArrayList<>();
+
+  @JsonField public String name;
+  @JsonField public String code;
+  @JsonField public List<Color> colors = new ArrayList<Color>();
 }

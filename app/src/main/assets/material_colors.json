@@ -1,6 +1,7 @@
 {
   "data": [
     {
+      "code": "#F44336",
       "name": "red",
       "colors": [
         {
@@ -59,7 +60,8 @@
           "white": false
         },
         {
-          "name": "#FF5252",
+          "name": "a200",
+          "code": "#FF5252",
           "white": true
         },
         {
@@ -73,9 +75,10 @@
           "white": true
         }
       ]
-  },
+    },
     {
       "name": "pink",
+      "code": "#E91E63",
       "colors": [
         {
           "name": "50",

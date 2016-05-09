@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
+import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.bluelinelabs.logansquare.LoganSquare;
@@ -21,7 +20,7 @@ public class ColorsActivity extends AppCompatActivity {
 
   private static final String EXTRA_COLOR = "color";
   @Bind(R.id.colorMainList) RecyclerView colorMainList;
-  @Bind(R.id.toolbar) Toolbar toolbar;
+  @Bind(R.id.toolbar) TextView toolbar;
   @Bind(R.id.colorDetailList) RecyclerView colorDetailList;
 
   public static Intent putIntent(Context context, int color) {
@@ -43,9 +42,10 @@ public class ColorsActivity extends AppCompatActivity {
     try {
       InputStream is = getAssets().open("material_colors.json");
       MaterialColorModel model = LoganSquare.parse(is, MaterialColorModel.class);
-      Toast.makeText(ColorsActivity.this, "" + model.data.pink.size(), Toast.LENGTH_SHORT).show();
       ColorMainAdapter mainAdapter = new ColorMainAdapter(this, model.data);
-      ColorDetailAdapter detailAdapter = new ColorDetailAdapter(this, model.data.pink);
+      ColorDetailAdapter detailAdapter = new ColorDetailAdapter(this, model.data.get(0).colors);
+      colorMainList.setAdapter(mainAdapter);
+      colorDetailList.setAdapter(detailAdapter);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -57,6 +57,5 @@ public class ColorsActivity extends AppCompatActivity {
   }
 
   private void initToolbar() {
-    setSupportActionBar(toolbar);
   }
 }
