@@ -3,6 +3,7 @@ package me.droan.materialcolors;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
@@ -14,24 +15,26 @@ import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.droan.materialcolors.fontUtil.FontCache;
 
 public class MainActivity extends AppCompatActivity
     implements SharedPreferences.OnSharedPreferenceChangeListener {
 
   @Bind(R.id.toolbar) Toolbar toolbar;
   @Bind(R.id.appBar) AppBarLayout appBar;
-  @Bind(R.id.colorPrimary1) Button colorPrimary1;
-  @Bind(R.id.colorPrimary2) Button colorPrimary2;
+  @Bind(R.id.colorPrimary1) TextView colorPrimary1;
+  @Bind(R.id.colorPrimary2) TextView colorPrimary2;
   @Bind(R.id.colorStatus1) Button colorStatus1;
   @Bind(R.id.colorStatus2) Button colorStatus2;
-  @Bind(R.id.colorAccent1) Button colorAccent1;
-  @Bind(R.id.colorAccent2) Button colorAccent2;
-  @Bind(R.id.colorBackground1) Button colorBackground1;
-  @Bind(R.id.colorBackground2) Button colorBackground2;
+  @Bind(R.id.colorAccent1) TextView colorAccent1;
+  @Bind(R.id.colorAccent2) TextView colorAccent2;
+  @Bind(R.id.colorBackground1) TextView colorBackground1;
+  @Bind(R.id.colorBackground2) TextView colorBackground2;
   @Bind(R.id.gridLayout) GridLayout gridLayout;
   @Bind(R.id.settings) Button settings;
   @Bind(R.id.fab) FloatingActionButton fab;
@@ -44,7 +47,8 @@ public class MainActivity extends AppCompatActivity
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    FontCache.getInstance().addFont("robotoMono", "RobotoMono400.ttf");
+    DataBindingUtil.setContentView(this, R.layout.activity_main);
     ButterKnife.bind(this);
   }
 

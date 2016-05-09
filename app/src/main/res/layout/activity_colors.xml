@@ -1,50 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+  <data>
+
+  </data>
+  <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+      android:orientation="horizontal"
     tools:context="me.droan.materialcolors.ColorsActivity"
     >
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="horizontal"
-      >
     <android.support.v7.widget.RecyclerView
         android:id="@+id/colorMainList"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         />
     <View
-        android:layout_width="1dp"
+        android:layout_width="0.9dp"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
+        android:background="@color/grey"
         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-      <TextView
-          android:id="@+id/toolbar"
+      <android.support.design.widget.AppBarLayout
           android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          app:elevation="0.5dp"
+          >
+        <android.support.v7.widget.Toolbar
+          android:id="@+id/toolbar"
+            android:layout_width="match_parent"
           android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
           android:gravity="center_vertical"
-          android:paddingStart="12dp"
-          android:text="text"
-          style="@style/TextAppearance.AppCompat.Title"
-          />
+            >
+          <TextView
+              android:id="@+id/title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="20sp"
+              app:font="@{`robotoMono`}"
+              />
+        </android.support.v7.widget.Toolbar>
+      </android.support.design.widget.AppBarLayout>
       <android.support.v7.widget.RecyclerView
           android:id="@+id/colorDetailList"
           android:layout_width="match_parent"
-          android:layout_height="match_parent"
+          android:layout_height="0dp"
           android:layout_weight="10"
           />
 
     </LinearLayout>
   </LinearLayout>
-
-</LinearLayout>
+</layout>
