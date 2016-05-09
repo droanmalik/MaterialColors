@@ -75,6 +75,12 @@ public class MainActivity extends AppCompatActivity
     fab.setBackgroundTintList(ColorStateList.valueOf(Utility.getColor(colorAccent)));
     gridLayout.setBackgroundColor(Utility.getColor(colorBackground));
     toolbar.setBackgroundColor(Utility.getColor(colorPrimary));
+    colorPrimary2.setTextColor(Utility.getColor(colorPrimary));
+    colorPrimary2.setText(colorPrimary);
+    colorAccent2.setTextColor(Utility.getColor(colorAccent));
+    colorAccent2.setText(colorAccent);
+    colorBackground2.setTextColor(Utility.getColor(colorBackground));
+    colorBackground2.setText(Utility.getColor(colorBackground));
     // finally change the color
     //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
     //  Window window = getWindow();
