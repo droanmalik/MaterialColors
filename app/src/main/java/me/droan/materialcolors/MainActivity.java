@@ -8,10 +8,10 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -52,17 +52,11 @@ public class MainActivity extends AppCompatActivity
     PreferenceManager.getDefaultSharedPreferences(this)
         .registerOnSharedPreferenceChangeListener(this);
     colorPrimary = SharedPrefUtil.read(this, SharedPrefUtil.KEY_PRIMARY,
-        getFormat(getResources().getColor(R.color.colorPrimary)));
+        getFormat(ContextCompat.getColor(this, R.color.colorPrimary)));
     colorAccent = SharedPrefUtil.read(this, SharedPrefUtil.KEY_ACCENT,
-        getFormat(getResources().getColor(R.color.colorAccent)));
+        getFormat(ContextCompat.getColor(this, R.color.colorAccent)));
     colorBackground = SharedPrefUtil.read(this, SharedPrefUtil.KEY_BACKGROUND,
-        getFormat(getResources().getColor(android.R.color.white)));
-    //colorStatusBar = SharedPrefUtil.read(this, SharedPrefUtil.KEY_STATUS,
-    //    getFormat(getResources().getColor(android.R.color.black)));
-    Log.e("121212", "primary" + colorPrimary);
-    Log.e("121212", "accent" + colorAccent);
-    Log.e("121212", "back" + colorBackground);
-
+        getFormat(ContextCompat.getColor(this, R.color.white)));
   }
 
   @Override protected void onResume() {
@@ -79,21 +73,20 @@ public class MainActivity extends AppCompatActivity
     colorPrimary2.setText(colorPrimary);
     colorAccent2.setTextColor(Utility.getColor(colorAccent));
     colorAccent2.setText(colorAccent);
-    colorBackground2.setTextColor(Utility.getColor(colorBackground));
-    colorBackground2.setText(Utility.getColor(colorBackground));
-    // finally change the color
-    //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-    //  Window window = getWindow();
-    //
-    //  // clear FLAG_TRANSLUCENT_STATUS flag:
-    //  window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-    //
-    //  // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-    //  window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-    //
-    //  // finally change the color
-    //  window.setStatusBarColor(getResources().getColor(Utility.getColor(colorStatusBar)));
-    //}
+    colorBackground2.setText(colorBackground);
+    boolean isWhite =
+        SharedPrefUtil.read(getApplicationContext(), SharedPrefUtil.KEY_BACKGROUND_DARK, false);
+    int black = ContextCompat.getColor(this, R.color.black);
+    int white = ContextCompat.getColor(this, R.color.white);
+    if (!isWhite) {
+      colorAccent1.setTextColor(black);
+      colorPrimary1.setTextColor(black);
+    } else {
+      colorAccent1.setTextColor(white);
+      colorPrimary1.setTextColor(white);
+      colorBackground1.setTextColor(black);
+      colorBackground2.setTextColor(black);
+    }
   }
 
   private String getFormat(int color) {
@@ -103,11 +96,12 @@ public class MainActivity extends AppCompatActivity
   @OnClick({
       R.id.colorPrimary1, R.id.colorPrimary2, R.id.colorStatus1, R.id.colorStatus2,
       R.id.colorAccent1, R.id.colorAccent2, R.id.colorBackground1, R.id.colorBackground2,
-      R.id.settings
+      R.id.settings, R.id.toolbar, R.id.fab
   }) public void onClick(View view) {
     switch (view.getId()) {
       case R.id.colorPrimary1:
       case R.id.colorPrimary2:
+      case R.id.toolbar:
         Intent intent = ColorsActivity.putIntent(this, SharedPrefUtil.KEY_PRIMARY);
         startActivity(intent);
         break;
@@ -116,6 +110,7 @@ public class MainActivity extends AppCompatActivity
         break;
       case R.id.colorAccent1:
       case R.id.colorAccent2:
+      case R.id.fab:
         Intent intent1 = ColorsActivity.putIntent(this, SharedPrefUtil.KEY_ACCENT);
         startActivity(intent1);
         break;
@@ -125,7 +120,7 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent2);
         break;
       case R.id.settings:
-        Toast.makeText(MainActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, R.string.coming_soon, Toast.LENGTH_SHORT).show();
         break;
     }
   }

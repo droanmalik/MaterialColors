@@ -1400,6 +1400,22 @@
         }
 
       ]
+    },
+    {
+      "name": "black/white",
+      "code": "#000000",
+      "colors": [
+        {
+          "name": "black",
+          "code": "#000000",
+          "white": true
+        },
+        {
+          "name": "white",
+          "code": "#FFFFFF",
+          "white": false
+        }
+      ]
     }
   ]
 }

@@ -14,9 +14,6 @@ import me.droan.materialcolors.R;
 import me.droan.materialcolors.Utility;
 import me.droan.materialcolors.model.Color;
 
-/**
- * Created by drone on 09-05-2016.
- */
 public class ColorDetailAdapter extends RecyclerView.Adapter<ColorDetailAdapter.Holder> {
   private Context context;
   private List<Color> list;
@@ -48,7 +45,7 @@ public class ColorDetailAdapter extends RecyclerView.Adapter<ColorDetailAdapter.
   }
 
   public interface ItemClickListener {
-    void onItemClick(String code);
+    void onItemClick(String code, boolean white);
   }
 
   class Holder extends RecyclerView.ViewHolder {
@@ -69,7 +66,7 @@ public class ColorDetailAdapter extends RecyclerView.Adapter<ColorDetailAdapter.
       code.setTextColor(Utility.getColor(color.white));
       root.setOnClickListener(new View.OnClickListener() {
         @Override public void onClick(View v) {
-          listener.onItemClick(color.code);
+          listener.onItemClick(color.code, color.white);
         }
       });
     }

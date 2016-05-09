@@ -55,9 +55,13 @@ public class ColorsActivity extends AppCompatActivity {
       detailAdapter = new ColorDetailAdapter(this, model.data.get(0).colors,
           new ColorDetailAdapter.ItemClickListener() {
 
-            @Override public void onItemClick(String code) {
+            @Override public void onItemClick(String code, boolean white) {
               SharedPrefUtil.write(getApplicationContext(), getIntent().getStringExtra(EXTRA_FROM),
                   code);
+              if (getIntent().getStringExtra(EXTRA_FROM).equals(SharedPrefUtil.KEY_BACKGROUND)) {
+                SharedPrefUtil.write(getApplicationContext(), SharedPrefUtil.KEY_BACKGROUND_DARK,
+                    white);
+              }
               finish();
             }
           });
