@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import butterknife.Bind;
@@ -43,20 +45,48 @@ public class MainActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
+  }
+
+  private void getSharedPrefData() {
+    PreferenceManager.getDefaultSharedPreferences(this)
+        .registerOnSharedPreferenceChangeListener(this);
     colorPrimary = SharedPrefUtil.read(this, SharedPrefUtil.KEY_PRIMARY,
         getFormat(getResources().getColor(R.color.colorPrimary)));
     colorAccent = SharedPrefUtil.read(this, SharedPrefUtil.KEY_ACCENT,
         getFormat(getResources().getColor(R.color.colorAccent)));
     colorBackground = SharedPrefUtil.read(this, SharedPrefUtil.KEY_BACKGROUND,
         getFormat(getResources().getColor(android.R.color.white)));
-    colorStatusBar = SharedPrefUtil.read(this, SharedPrefUtil.KEY_STATUS,
-        getFormat(getResources().getColor(android.R.color.black)));
+    //colorStatusBar = SharedPrefUtil.read(this, SharedPrefUtil.KEY_STATUS,
+    //    getFormat(getResources().getColor(android.R.color.black)));
+    Log.e("121212", "primary" + colorPrimary);
+    Log.e("121212", "accent" + colorAccent);
+    Log.e("121212", "back" + colorBackground);
+
   }
 
   @Override protected void onResume() {
     super.onResume();
-    appBar.setBackgroundColor(Utility.getColor(colorPrimary));
+    getSharedPrefData();
+    updateViews();
+  }
+
+  private void updateViews() {
     fab.setBackgroundTintList(ColorStateList.valueOf(Utility.getColor(colorAccent)));
+    gridLayout.setBackgroundColor(Utility.getColor(colorBackground));
+    toolbar.setBackgroundColor(Utility.getColor(colorPrimary));
+    // finally change the color
+    //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    //  Window window = getWindow();
+    //
+    //  // clear FLAG_TRANSLUCENT_STATUS flag:
+    //  window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+    //
+    //  // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+    //  window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+    //
+    //  // finally change the color
+    //  window.setStatusBarColor(getResources().getColor(Utility.getColor(colorStatusBar)));
+    //}
   }
 
   private String getFormat(int color) {
@@ -79,16 +109,27 @@ public class MainActivity extends AppCompatActivity
         break;
       case R.id.colorAccent1:
       case R.id.colorAccent2:
+        Intent intent1 = ColorsActivity.putIntent(this, SharedPrefUtil.KEY_ACCENT);
+        startActivity(intent1);
         break;
       case R.id.colorBackground1:
       case R.id.colorBackground2:
+        Intent intent2 = ColorsActivity.putIntent(this, SharedPrefUtil.KEY_BACKGROUND);
+        startActivity(intent2);
         break;
       case R.id.settings:
         break;
     }
   }
 
-  @Override public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+  @Override protected void onDestroy() {
+    super.onDestroy();
+    PreferenceManager.getDefaultSharedPreferences(this)
+        .unregisterOnSharedPreferenceChangeListener(this);
+  }
 
+  @Override public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+    getSharedPrefData();
+    updateViews();
   }
 }

@@ -2,6 +2,7 @@ package me.droan.materialcolors;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 /**
  * Created by drone on 09/05/16.
@@ -14,15 +15,15 @@ public class SharedPrefUtil {
   private static final String MY_PREF = "me.droan.materialColors.sharedpref";
 
   public static void write(Context context, String key, String hexCode) {
-    SharedPreferences sharedPref = context.getSharedPreferences(MY_PREF, Context.MODE_PRIVATE);
-    SharedPreferences.Editor editor = sharedPref.edit();
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+    SharedPreferences.Editor editor = prefs.edit();
     editor.putString(key, hexCode);
     editor.commit();
   }
 
   public static String read(Context context, String key, String defaultColor) {
-    SharedPreferences sharedPref = context.getSharedPreferences(MY_PREF, Context.MODE_PRIVATE);
-    String hexCode = sharedPref.getString(key, defaultColor);
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+    String hexCode = prefs.getString(key, defaultColor);
     return hexCode;
   }
 }

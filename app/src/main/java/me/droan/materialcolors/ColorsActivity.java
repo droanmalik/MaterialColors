@@ -58,6 +58,7 @@ public class ColorsActivity extends AppCompatActivity {
             @Override public void onItemClick(String code) {
               SharedPrefUtil.write(getApplicationContext(), getIntent().getStringExtra(EXTRA_FROM),
                   code);
+              finish();
             }
           });
 
