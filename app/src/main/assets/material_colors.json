@@ -152,6 +152,1254 @@
         }
 
       ]
+    },
+    {
+      "name": "purple",
+      "code": "#9C27B0",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#F3E5F5",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#E1BEE7",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#CE93D8",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#BA68C8",
+          "white": true
+        },
+        {
+          "name": "400",
+          "code": "#AB47BC",
+          "white": true
+        },
+        {
+          "name": "500",
+          "code": "#9C27B0",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#8E24AA",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#7B1FA2",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#6A1B9A",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#4A148C",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#EA80FC",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#E040FB",
+          "white": true
+        },
+        {
+          "name": "a400",
+          "code": "#D500F9",
+          "white": true
+        },
+        {
+          "name": "a700",
+          "code": "#AA00FF",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "deep-purple",
+      "code": "#673AB7",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#EDE7F6",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#D1C4E9",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#B39DDB",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#9575CD",
+          "white": true
+        },
+        {
+          "name": "400",
+          "code": "#7E57C2",
+          "white": true
+        },
+        {
+          "name": "500",
+          "code": "#673AB7",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#5E35B1",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#512DA8",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#4527A0",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#311B92",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#B388FF",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#7C4DFF",
+          "white": true
+        },
+        {
+          "name": "a400",
+          "code": "#651FFF",
+          "white": true
+        },
+        {
+          "name": "a700",
+          "code": "#6200EA",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "indigo",
+      "code": "#3F51B5",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#E8EAF6",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#C5CAE9",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#9FA8DA",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#7986CB",
+          "white": true
+        },
+        {
+          "name": "400",
+          "code": "#5C6BC0",
+          "white": true
+        },
+        {
+          "name": "500",
+          "code": "#3F51B5",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#3949AB",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#303F9F",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#283593",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#1A237E",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#8C9EFF",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#536DFE",
+          "white": true
+        },
+        {
+          "name": "a400",
+          "code": "#3D5AFE",
+          "white": true
+        },
+        {
+          "name": "a700",
+          "code": "#304FFE",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "blue",
+      "code": "#2196F3",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#E3F2FD",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#BBDEFB",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#90CAF9",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#64B5F6",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#42A5F5",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#2196F3",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#1E88E5",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#1976D2",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#1565C0",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#0D47A1",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#82B1FF",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#448AFF",
+          "white": true
+        },
+        {
+          "name": "a400",
+          "code": "#2979FF",
+          "white": true
+        },
+        {
+          "name": "a700",
+          "code": "#2962FF",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "light-blue",
+      "code": "#03A9F4",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#E1F5FE",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#B3E5FC",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#81D4FA",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#4FC3F7",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#29B6F6",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#03A9F4",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#039BE5",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#0288D1",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#0277BD",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#01579B",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#80D8FF",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#40C4FF",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#00B0FF",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#0091EA",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "cyan",
+      "code": "#00BCD4",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#E0F7FA",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#B2EBF2",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#80DEEA",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#4DD0E1",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#26C6DA",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#00BCD4",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#00ACC1",
+          "white": false
+        },
+        {
+          "name": "700",
+          "code": "#0097A7",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#00838F",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#006064",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#84FFFF",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#18FFFF",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#00E5FF",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#00B8D4",
+          "white": false
+        }
+
+      ]
+    },
+    {
+      "name": "teal",
+      "code": "#009688",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#E0F2F1",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#B2DFDB",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#80CBC4",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#4DB6AC",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#26A69A",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#009688",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#00897B",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#00796B",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#00695C",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#004D40",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#A7FFEB",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#64FFDA",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#1DE9B6",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#00BFA5",
+          "white": false
+        }
+
+      ]
+    },
+    {
+      "name": "green",
+      "code": "#4CAF50",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#E8F5E9",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#C8E6C9",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#A5D6A7",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#81C784",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#66BB6A",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#4CAF50",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#43A047",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#388E3C",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#2E7D32",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#1B5E20",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#B9F6CA",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#69F0AE",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#00E676",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#00C853",
+          "white": false
+        }
+
+      ]
+    },
+    {
+      "name": "light-green",
+      "code": "#8BC34A",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#F1F8E9",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#DCEDC8",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#C5E1A5",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#AED581",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#9CCC65",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#8BC34A",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#7CB342",
+          "white": false
+        },
+        {
+          "name": "700",
+          "code": "#689F38",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#558B2F",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#33691E",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#CCFF90",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#B2FF59",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#76FF03",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#64DD17",
+          "white": false
+        }
+
+      ]
+    },
+    {
+      "name": "lime",
+      "code": "#CDDC39",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#F9FBE7",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#F0F4C3",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#E6EE9C",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#DCE775",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#D4E157",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#CDDC39",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#C0CA33",
+          "white": false
+        },
+        {
+          "name": "700",
+          "code": "#AFB42B",
+          "white": false
+        },
+        {
+          "name": "800",
+          "code": "#9E9D24",
+          "white": false
+        },
+        {
+          "name": "900",
+          "code": "#827717",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#F4FF81",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#EEFF41",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#C6FF00",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#AEEA00",
+          "white": false
+        }
+
+      ]
+    },
+    {
+      "name": "yellow",
+      "code": "#FFEB3B",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#FFFDE7",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#FFF9C4",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#FFF59D",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#FFF176",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#FFEE58",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#FFEB3B",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#FDD835",
+          "white": false
+        },
+        {
+          "name": "700",
+          "code": "#FBC02D",
+          "white": false
+        },
+        {
+          "name": "800",
+          "code": "#F9A825",
+          "white": false
+        },
+        {
+          "name": "900",
+          "code": "#F57F17",
+          "white": false
+        },
+        {
+          "name": "a100",
+          "code": "#FFFF8D",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#FFFF00",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#FFEA00",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#FFD600",
+          "white": false
+        }
+
+      ]
+    },
+    {
+      "name": "amber",
+      "code": "#FFC107",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#FFF8E1",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#FFECB3",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#FFE082",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#FFD54F",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#FFCA28",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#FFC107",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#FFB300",
+          "white": false
+        },
+        {
+          "name": "700",
+          "code": "#FFA000",
+          "white": false
+        },
+        {
+          "name": "800",
+          "code": "#FF8F00",
+          "white": false
+        },
+        {
+          "name": "900",
+          "code": "#FF6F00",
+          "white": false
+        },
+        {
+          "name": "a100",
+          "code": "#FFE57F",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#FFD740",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#FFC400",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#FFAB00",
+          "white": false
+        }
+      ]
+    },
+    {
+      "name": "orange",
+      "code": "#FF9800",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#FFF3E0",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#FFE0B2",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#FFCC80",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#FFB74D",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#FFA726",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#FF9800",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#FB8C00",
+          "white": false
+        },
+        {
+          "name": "700",
+          "code": "#F57C00",
+          "white": false
+        },
+        {
+          "name": "800",
+          "code": "#EF6C00",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#E65100",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#FFD180",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#FFAB40",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#FF9100",
+          "white": false
+        },
+        {
+          "name": "a700",
+          "code": "#FF6D00",
+          "white": false
+        }
+
+      ]
+    },
+    {
+      "name": "deep-orange",
+      "code": "#FF5722",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#FBE9E7",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#FFCCBC",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#FFAB91",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#FF8A65",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#FF7043",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#FF5722",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#F4511E",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#E64A19",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#D84315",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#BF360C",
+          "white": true
+        },
+        {
+          "name": "a100",
+          "code": "#FF9E80",
+          "white": false
+        },
+        {
+          "name": "a200",
+          "code": "#FF6E40",
+          "white": false
+        },
+        {
+          "name": "a400",
+          "code": "#FF3D00",
+          "white": true
+        },
+        {
+          "name": "a700",
+          "code": "#DD2C00",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "brown",
+      "code": "#795548",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#EFEBE9",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#D7CCC8",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#BCAAA4",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#A1887F",
+          "white": true
+        },
+        {
+          "name": "400",
+          "code": "#8D6E63",
+          "white": true
+        },
+        {
+          "name": "500",
+          "code": "#795548",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#6D4C41",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#5D4037",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#4E342E",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#3E2723",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "grey",
+      "code": "#9E9E9E",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#FAFAFA",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#F5F5F5",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#EEEEEE",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#E0E0E0",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#BDBDBD",
+          "white": false
+        },
+        {
+          "name": "500",
+          "code": "#9E9E9E",
+          "white": false
+        },
+        {
+          "name": "600",
+          "code": "#757575",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#616161",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#424242",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#212121",
+          "white": true
+        }
+
+      ]
+    },
+    {
+      "name": "blue-grey",
+      "code": "#607D8B",
+      "colors": [
+        {
+          "name": "50",
+          "code": "#ECEFF1",
+          "white": false
+        },
+        {
+          "name": "100",
+          "code": "#CFD8DC",
+          "white": false
+        },
+        {
+          "name": "200",
+          "code": "#B0BEC5",
+          "white": false
+        },
+        {
+          "name": "300",
+          "code": "#90A4AE",
+          "white": false
+        },
+        {
+          "name": "400",
+          "code": "#78909C",
+          "white": true
+        },
+        {
+          "name": "500",
+          "code": "#607D8B",
+          "white": true
+        },
+        {
+          "name": "600",
+          "code": "#546E7A",
+          "white": true
+        },
+        {
+          "name": "700",
+          "code": "#455A64",
+          "white": true
+        },
+        {
+          "name": "800",
+          "code": "#37474F",
+          "white": true
+        },
+        {
+          "name": "900",
+          "code": "#263238",
+          "white": true
+        }
+
+      ]
     }
   ]
 }

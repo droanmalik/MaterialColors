@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
-import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.bluelinelabs.logansquare.LoganSquare;
@@ -20,15 +19,16 @@ import me.droan.materialcolors.model.MaterialColorModel;
 public class ColorsActivity extends AppCompatActivity {
 
   private static final String EXTRA_COLOR = "color";
+  private static final String EXTRA_FROM = "from";
   @Bind(R.id.colorMainList) RecyclerView colorMainList;
   @Bind(R.id.toolbar) TextView toolbar;
   @Bind(R.id.colorDetailList) RecyclerView colorDetailList;
   private ColorDetailAdapter detailAdapter;
   private MaterialColorModel model;
 
-  public static Intent putIntent(Context context, int color) {
+  public static Intent putIntent(Context context, String from) {
     Intent intent = new Intent(context, ColorsActivity.class);
-    intent.putExtra(EXTRA_COLOR, color);
+    intent.putExtra(EXTRA_FROM, from);
     return intent;
   }
 
@@ -36,7 +36,6 @@ public class ColorsActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_colors);
     ButterKnife.bind(this);
-    initToolbar();
     initRecyclerView();
   }
 
@@ -45,6 +44,7 @@ public class ColorsActivity extends AppCompatActivity {
     try {
       InputStream is = getAssets().open("material_colors.json");
       model = LoganSquare.parse(is, MaterialColorModel.class);
+      initToolbar(0);
       ColorMainAdapter mainAdapter =
           new ColorMainAdapter(this, model.data, new ColorMainAdapter.ItemClickListener() {
             @Override public void onItemClick(int position) {
@@ -56,7 +56,8 @@ public class ColorsActivity extends AppCompatActivity {
           new ColorDetailAdapter.ItemClickListener() {
 
             @Override public void onItemClick(String code) {
-              Toast.makeText(ColorsActivity.this, "" + code, Toast.LENGTH_SHORT).show();
+              SharedPrefUtil.write(getApplicationContext(), getIntent().getStringExtra(EXTRA_FROM),
+                  code);
             }
           });
 
@@ -68,6 +69,7 @@ public class ColorsActivity extends AppCompatActivity {
   }
 
   private void refreshDetailAdapter(int position) {
+    initToolbar(position);
     detailAdapter.refresh(model.data.get(position).colors);
   }
 
@@ -76,6 +78,7 @@ public class ColorsActivity extends AppCompatActivity {
     colorDetailList.setLayoutManager(new LinearLayoutManager(this));
   }
 
-  private void initToolbar() {
+  private void initToolbar(int position) {
+    toolbar.setText(model.data.get(position).name);
   }
 }

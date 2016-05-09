@@ -1,6 +1,8 @@
 package me.droan.materialcolors;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -14,7 +16,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements SharedPreferences.OnSharedPreferenceChangeListener {
 
   @Bind(R.id.toolbar) Toolbar toolbar;
   @Bind(R.id.appBar) AppBarLayout appBar;
@@ -31,10 +34,33 @@ public class MainActivity extends AppCompatActivity {
   @Bind(R.id.fab) FloatingActionButton fab;
   @Bind(R.id.root) CoordinatorLayout root;
 
+  private String colorPrimary;
+  private String colorAccent;
+  private String colorBackground;
+  private String colorStatusBar;
+
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
+    colorPrimary = SharedPrefUtil.read(this, SharedPrefUtil.KEY_PRIMARY,
+        getFormat(getResources().getColor(R.color.colorPrimary)));
+    colorAccent = SharedPrefUtil.read(this, SharedPrefUtil.KEY_ACCENT,
+        getFormat(getResources().getColor(R.color.colorAccent)));
+    colorBackground = SharedPrefUtil.read(this, SharedPrefUtil.KEY_BACKGROUND,
+        getFormat(getResources().getColor(android.R.color.white)));
+    colorStatusBar = SharedPrefUtil.read(this, SharedPrefUtil.KEY_STATUS,
+        getFormat(getResources().getColor(android.R.color.black)));
+  }
+
+  @Override protected void onResume() {
+    super.onResume();
+    appBar.setBackgroundColor(Utility.getColor(colorPrimary));
+    fab.setBackgroundTintList(ColorStateList.valueOf(Utility.getColor(colorAccent)));
+  }
+
+  private String getFormat(int color) {
+    return String.format("#%06X", (0xFFFFFF & color));
   }
 
   @OnClick({
@@ -45,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     switch (view.getId()) {
       case R.id.colorPrimary1:
       case R.id.colorPrimary2:
-        Intent intent = new Intent(this, ColorsActivity.class);
+        Intent intent = ColorsActivity.putIntent(this, SharedPrefUtil.KEY_PRIMARY);
         startActivity(intent);
         break;
       case R.id.colorStatus1:
@@ -60,5 +86,9 @@ public class MainActivity extends AppCompatActivity {
       case R.id.settings:
         break;
     }
+  }
+
+  @Override public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+
   }
 }
