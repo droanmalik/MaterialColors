@@ -19,7 +19,6 @@
   </style>
 
   <style name="AppTheme.colorTheme" parent="AppTheme">
-    <item name="android:windowContentTransitions">true</item>
     <item name="android:statusBarColor">#bdbdbd</item>
   </style>
 
