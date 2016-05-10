@@ -6,4 +6,5 @@
   <dimen name="fab_margin">0dp</dimen>
   <dimen name="dimen_16">16dp</dimen>
   <dimen name="left_color_dimen">48dp</dimen>
+  <dimen name="grid_margin">48dp</dimen>
 </resources>

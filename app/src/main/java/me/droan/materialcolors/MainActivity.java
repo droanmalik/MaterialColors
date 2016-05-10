@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity
 
   private void updateViews() {
     fab.setBackgroundTintList(ColorStateList.valueOf(Utility.getColor(colorAccent)));
-    gridLayout.setBackgroundColor(Utility.getColor(colorBackground));
+    root.setBackgroundColor(Utility.getColor(colorBackground));
     toolbar.setBackgroundColor(Utility.getColor(colorPrimary));
     colorPrimary2.setTextColor(Utility.getColor(colorPrimary));
     colorPrimary2.setText(colorPrimary);
@@ -85,11 +85,13 @@ public class MainActivity extends AppCompatActivity
     if (!isWhite) {
       colorAccent1.setTextColor(black);
       colorPrimary1.setTextColor(black);
+      colorBackground1.setTextColor(black);
+      colorBackground2.setTextColor(black);
     } else {
       colorAccent1.setTextColor(white);
       colorPrimary1.setTextColor(white);
-      colorBackground1.setTextColor(black);
-      colorBackground2.setTextColor(black);
+      colorBackground1.setTextColor(white);
+      colorBackground2.setTextColor(white);
     }
   }
 
