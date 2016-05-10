@@ -7,7 +7,7 @@ import io.fabric.sdk.android.Fabric;
 public class Application extends android.app.Application {
 
   private static Context context;
-  private boolean turnOnFabric = false;
+  private boolean turnOnFabric = true;
 
   public static Context getAppContext() {
     return context;

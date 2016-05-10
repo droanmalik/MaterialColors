@@ -48,6 +48,14 @@
 
 -keep class android.support.v7.widget.RoundRectDrawable { *; }
 
+-keep public class com.google.android.gms.ads.** {
+   public *;
+}
+
+-keep public class com.google.ads.** {
+   public *;
+}
+
 -dontwarn android.support.design.**
 -keep class android.support.design.** { *; }
 -keep interface android.support.design.** { *; }

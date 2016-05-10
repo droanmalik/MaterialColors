@@ -6,4 +6,6 @@
   <string name="coming_soon">Coming soon…</string>
   <string name="status_bar_color">Status Bar Color</string>
   <string name="setting">setting</string>
+  <string name="fake_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+
 </resources>

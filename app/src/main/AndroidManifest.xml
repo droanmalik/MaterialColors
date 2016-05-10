@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="me.droan.materialcolors">
 
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
   <uses-permission android:name="android.permission.INTERNET"/>
   <application
       android:name=".Application"
@@ -12,6 +13,7 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme"
       tools:ignore="GoogleAppIndexingWarning">
+    <!--<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>-->
     <activity
         android:name=".MainActivity"
         android:theme="@style/AppTheme.MainTheme">
@@ -25,6 +27,11 @@
         android:name=".ColorsActivity"
         android:theme="@style/AppTheme.colorTheme">
     </activity>
+
+    <!--<activity-->
+    <!--android:name="com.google.android.gms.ads.AdActivity"-->
+    <!--android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"-->
+    <!--android:theme="@android:style/Theme.Translucent"/>-->
 
     <meta-data
         android:name="io.fabric.ApiKey"

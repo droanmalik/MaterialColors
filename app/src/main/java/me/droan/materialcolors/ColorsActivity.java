@@ -27,6 +27,7 @@ public class ColorsActivity extends AppCompatActivity {
   @Bind(R.id.toolbar) Toolbar toolbar;
   @Bind(R.id.colorDetailList) RecyclerView colorDetailList;
   @Bind(R.id.title) TextView title;
+  //@Bind(R.id.adView) AdView adView;
   private ColorDetailAdapter detailAdapter;
   private MaterialColorModel model;
 
@@ -42,10 +43,17 @@ public class ColorsActivity extends AppCompatActivity {
     DataBindingUtil.setContentView(this, R.layout.activity_colors);
     ButterKnife.bind(this);
     initRecyclerView();
+
+  }
+
+  private void initAds() {
+    //AdRequest adRequest= new AdRequest.Builder().build();
+    //adView.loadAd(adRequest);
   }
 
   @Override protected void onResume() {
     super.onResume();
+    initAds();
     try {
       InputStream is = getAssets().open("material_colors.json");
       model = LoganSquare.parse(is, MaterialColorModel.class);
