@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.databinding.DataBindingUtil;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity
   @Bind(R.id.colorBackground1) TextView colorBackground1;
   @Bind(R.id.colorBackground2) TextView colorBackground2;
   @Bind(R.id.gridLayout) GridLayout gridLayout;
-  @Bind(R.id.settings) Button settings;
+  @Bind(R.id.share) Button share;
   @Bind(R.id.fab) FloatingActionButton fab;
   @Bind(R.id.root) CoordinatorLayout root;
 
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity
   @OnClick({
       R.id.colorPrimary1, R.id.colorPrimary2, R.id.colorStatus1, R.id.colorStatus2,
       R.id.colorAccent1, R.id.colorAccent2, R.id.colorBackground1, R.id.colorBackground2,
-      R.id.settings, R.id.toolbar, R.id.fab
+      R.id.share, R.id.toolbar, R.id.fab
   }) public void onClick(View view) {
     switch (view.getId()) {
       case R.id.colorPrimary1:
@@ -125,9 +126,29 @@ public class MainActivity extends AppCompatActivity
         Intent intent2 = ColorsActivity.putIntent(this, SharedPrefUtil.KEY_BACKGROUND);
         startActivity(intent2);
         break;
-      case R.id.settings:
-        Toast.makeText(MainActivity.this, R.string.coming_soon, Toast.LENGTH_SHORT).show();
+      case R.id.share:
+        shareViaEmail();
         break;
+    }
+  }
+
+  private void shareViaEmail() {
+    String subject = "#MaterialColors";
+    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "", null));
+    emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+    String text = "colorPrimary: "
+        + colorPrimary
+        + "\n"
+        + "colorAccent: "
+        + colorAccent
+        + "\n"
+        + "colorBackground: "
+        + colorBackground;
+    emailIntent.putExtra(Intent.EXTRA_TEXT, text);
+    if (emailIntent.resolveActivity(getPackageManager()) != null) {
+      startActivity((Intent.createChooser(emailIntent, "Share palettes via email...")));
+    } else {
+      Toast.makeText(this, "No email client found", Toast.LENGTH_SHORT).show();
     }
   }
 

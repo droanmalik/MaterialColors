@@ -126,12 +126,15 @@
         />
   </android.support.v7.widget.GridLayout>
   <Button
-      android:id="@+id/settings"
+      android:id="@+id/share"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/dimen_16"
-      android:text="@string/setting"
-      android:visibility="gone"
+      android:drawablePadding="6dp"
+      android:drawableStart="@drawable/ic_share_black_24dp"
+      android:text="@string/share"
+      android:textAllCaps="false"
+      android:textSize="12sp"
       app:layout_anchor="@id/gridLayout"
       app:layout_anchorGravity="bottom|end"
       style="@style/Widget.AppCompat.Button.Small"
