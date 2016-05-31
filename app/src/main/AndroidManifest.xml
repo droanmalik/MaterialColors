@@ -13,7 +13,6 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme"
       tools:ignore="GoogleAppIndexingWarning">
-    <!--<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>-->
     <activity
         android:name=".MainActivity"
         android:theme="@style/AppTheme.MainTheme">
@@ -28,14 +27,6 @@
         android:theme="@style/AppTheme.colorTheme">
     </activity>
 
-    <!--<activity-->
-    <!--android:name="com.google.android.gms.ads.AdActivity"-->
-    <!--android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"-->
-    <!--android:theme="@android:style/Theme.Translucent"/>-->
-
-    <meta-data
-        android:name="io.fabric.ApiKey"
-        android:value="9937594a388b3cc5a10d53db1e09e6703b2c4a74"/>
   </application>
 
 </manifest>
