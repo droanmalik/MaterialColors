@@ -5,7 +5,7 @@ import android.content.Context;
 public class Application extends android.app.Application {
 
   private static Context context;
-  private boolean turnOnFabric = true;
+  private boolean turnOnLogging = BuildConfig.CRASH_LOGGING_ENABLED;
 
   public static Context getAppContext() {
     return context;
@@ -13,7 +13,7 @@ public class Application extends android.app.Application {
 
   @Override public void onCreate() {
     super.onCreate();
-    if (turnOnFabric) {
+    if (turnOnLogging) {
 
     }
     context = getApplicationContext();

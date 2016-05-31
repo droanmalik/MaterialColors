@@ -33,7 +33,12 @@ android {
     release {
       minifyEnabled true
       shrinkResources true
+      buildConfigField 'Boolean', 'CRASH_LOGGING_ENABLED', 'true'
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+    debug {
+      minifyEnabled false
+      buildConfigField 'Boolean', 'CRASH_LOGGING_ENABLED', 'false'
     }
   }
   dataBinding {
